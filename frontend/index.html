@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./src/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>Mi Granja</title>
@@ -11,22 +11,29 @@
 <body>
     <header>
         <nav>
-            <div class="d-flex justify-content-center p-2 px-5" id="div_nav">
-                <h1>
+            <div class="d-flex justify-content-center p-2 px-5 pt-5" id="div_nav">
+                <h1 >
                     Mi Granja
                 </h1> 
             </div>
         </nav>
     </header>
     <main class="d-flex justify-content-center">
-        <section class="bg-sucess border  align-items-center p-5 m-5 " id="div_form_login">
-            <div class="px-2 d-flex justify-content-between mb-4">
-                <button class="nav-link">sign In</button>
-                <button class="nav-link bt-secondary">Login</button>
+        <section class=" border  align-items-center p-5 m-5 " id="div_form_login">
+            <div id="nav-btn-login" class="px-2 d-flex justify-content-between mb-4 gap-5" >
+                <button class="btn-link-login-nav " id="btn-signIn">sign In</button>
+                <button class="btn-link-login-nav" id="btn-login">Login</button>
             </div>
-            <div >
-                <h2 class="text-center mb-3">Login</h2>
-                <form class=" text-center">
+            <div id="div-loading" class="p-5">
+                <svg class="img-loading" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                    <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                  </svg>
+                </div>
+            <div id="div-form-login-registrer">
+                
+                <h2 class="text-center mb-3" id="text-title-login">Login</h2>
+                <form class=" text-center" id="form-login">
                     <div class="mb-3">
                       <label for="InputUser" class="form-label">Usuario</label>
                       <input type="text" class="form-control" id="InputUser" aria-describedby="emailHelp">
@@ -35,10 +42,11 @@
                       <label for="InputPassword1" class="form-label">Contraseña</label>
                       <input type="password" class="form-control" id="InputPassword1">
                     </div>
-                    <button type="submit" class="btn btn-primary">Entrar</button>
+                    <button type="submit" class="boton-send-form-login">Entrar</button>
                   </form>
             </div>
         </section>
     </main>  
+    <script src="./src/script.js"></script>
 </body>
 </html>
