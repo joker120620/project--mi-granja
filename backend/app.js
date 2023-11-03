@@ -27,20 +27,26 @@ async function comparePassword(text, passwordEncripted) {
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
+//se obtiene la key del array que viene de la bd para poder mandejarlo
+//insert into tbl_users values ('11','jhon',aes_encrypt('12345678','jhon'));
+//select cast(aes_decrypt(pas_usu, '${userBody}') as char) from tbl_users WHERE usu_usu = '${userbody}';
 app.post('/verify-login', (req, res) => {
   let userBody= req.body.user
   let passwordBody= req.body.password
   
-  connection.query(`SELECT usu_usu, pas_usu FROM tbl_users WHERE usu_usu = "${userBody}" AND pas_usu = "${passwordBody}"`, function(err, rows, fields) {
+  connection.query(`select cast(aes_decrypt(pas_usu, '${userBody}') as char) from tbl_users WHERE usu_usu = '${userBody}'`, function(err, rows, fields) {
     if (err) throw err;
-    if (rows.length > 0) {
-      let pass_usu = rows[0].pas_usu
-  if (userBody == rows[0].usu_usu && comparePassword(passwordBody , pass_usu )) {
+    if (rows.length > 0 && !null ) {
+      let key = Object.keys(rows[0])[0]
+      console.log(rows[0][key] , ' ', passwordBody)
+  if (passwordBody == rows[0][key]) {
     res.json({ auth: true, msj: "login-sucess"  })
+  }else{
+    res.json({ auth:false, msj: "user invalid" })
   }
 
   }else{
-    res.json({ auth:false, msj: "user invalid" })
+    res.json({ auth:false, msj: "user inexist" })
   }
 
   
