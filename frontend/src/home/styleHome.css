@@ -1,0 +1,17 @@
+*{
+    color: #1d3d33;
+}
+:root {
+    --div-login-bg-color: #fef6cd;
+    --div-login-text-color: #416864;
+
+    --btn-login-bg-color: #3f8880;
+    --btn-login-border-color:#3f8880;
+  }
+
+body, html {
+    height: 100%;
+    background-repeat: no-repeat;
+    background: url(../bg-img.jpg) no-repeat center center fixed;
+    background-size: auto 100%;
+}
