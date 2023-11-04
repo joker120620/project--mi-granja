@@ -60,5 +60,3 @@ app.listen(port, () => {
 })
 
 
->>>>>>> JuanDavid
-
