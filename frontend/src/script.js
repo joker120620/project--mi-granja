@@ -28,7 +28,6 @@ captureElementsId("btnSendFormLogin").addEventListener("click", function (event)
 
     } else {
         //fetching data and auth Login
-        let res
         let req = { method: 'POST', headers: { "Content-type": "application/json;charset=UTF-8" }, body: `{"user":"${userLogin}", "password":"${passwordLogin}" }` };
             fetch("http://localhost:5000/verify-login", req)
                 .then(response => response.json())
