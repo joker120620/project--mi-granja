@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const bcrypt = require("bcryptjs");
+const path = require('path');
 const mysql = require('mysql');
 const app = express()
 app.use(cors())
@@ -13,19 +13,9 @@ let connection = mysql.createConnection({
   password : ''
 });
 connection.connect();
-
-//encript password
-async function encriptPassword(text) {
-  let passwordEncript  = await bcrypt.hash(text, 10);
-  return passwordEncript
-}
-//compare password 
-async function comparePassword(text, passwordEncripted) {
-  let passwordEncript =  await bcrypt.compare(text, passwordEncripted);
-  return passwordEncript
-}
+app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
 //se obtiene la key del array que viene de la bd para poder mandejarlo
 //insert into tbl_users values ('11','jhon',aes_encrypt('12345678','jhon'));
@@ -54,7 +44,9 @@ app.post('/verify-login', (req, res) => {
   
 })
 
-
+app.use((req, res, next) => {
+  res.status(404).json({ msj: "Error 404 no found" })
+});
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })

@@ -1,63 +1,73 @@
-*{
-    color: #1d3d33;
+* {
+  color: #1d3d33;
 }
-:root {
-    --div-login-bg-color: #fef6cd;
-    --div-login-text-color: #416864;
 
-    --btn-login-bg-color: #3f8880;
-    --btn-login-border-color:#3f8880;
-  }
-svg{
+:root {
+  --div-login-bg-color: #fef6cd;
+  --div-login-text-color: #416864;
+
+  --btn-login-bg-color: #3f8880;
+  --btn-login-border-color: #3f8880;
+}
+
+svg {
   width: 40px;
 }
-body, html {
-    height: 100%;
-    background-repeat: no-repeat;
-    background: url(./bg-img.jpg) no-repeat center center fixed;
-    background-size: auto 100%;
+
+body,
+html {
+  height: 100%;
+  background-repeat: no-repeat;
+  background: url(./bg-img.jpg) no-repeat center center fixed;
+  background-size: auto 100%;
 }
 
 
-#div_form_login{
-    color:var(--div-login-text-color);
-    background-color: var(--div-login-bg-color);
-    border-radius: 15px;
-    min-height: 200px;
-    position: relative;
-}
-#div-nav-login{
+#div_form_login {
+  color: var(--div-login-text-color);
+  background-color: var(--div-login-bg-color);
+  border-radius: 15px;
+  min-height: 200px;
   position: relative;
 }
-.boton-send-form-login{
-    color: white;
-    background-color: var(--btn-login-bg-color);
-    padding: 5px 10px  5px 10px ;
-    border-radius: 10px;
-    border: none;
+
+#div-nav-login {
+  position: relative;
 }
-.btn-link-login-nav{
-    border-radius: 10px;
-    padding: 5px 10px  5px 10px ;
-    border: none;
-    background-color: transparent;
+
+.boton-send-form-login {
+  color: white;
+  background-color: var(--btn-login-bg-color);
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+  border: none;
 }
-.btn-link-login-nav:hover{
-    color: white;
-    padding: 5px 10px  5px 10px ;
-    border-radius: 10px;
-    border: none;
+
+.btn-link-login-nav {
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+  border: none;
+  background-color: transparent;
 }
+
+.btn-link-login-nav:hover {
+  color: white;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+  border: none;
+}
+
 @keyframes loading {
-    0% {
-      transform: rotate(0deg);
-    }
-  
-    100% {
-      transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
   }
-.div-loading{
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.div-loading {
   display: none;
   position: absolute;
   width: 100%;
@@ -69,21 +79,24 @@ body, html {
   backdrop-filter: blur(10px);
   z-index: 40;
 
-   
+
 }
+
 .img-loading {
-    border: 6px solid var(--color-background);
-    border-radius: 100%;
-    border-top-color: var(--color-primary);
-    border-bottom-color: var(--color-primary);
-    width: 50px;
-    height: 50px;
-    animation: loading 1s infinite linear;
-    color: var(--div-login-text-color);
-  }
-#nav-btn-login{
-    display: none;
+  border: 6px solid var(--color-background);
+  border-radius: 100%;
+  border-top-color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  width: 50px;
+  height: 50px;
+  animation: loading 1s infinite linear;
+  color: var(--div-login-text-color);
 }
-.invisble-css{
+
+#nav-btn-login {
+  display: none;
+}
+
+.invisble-css {
   display: none;
 }
