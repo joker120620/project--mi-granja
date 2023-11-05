@@ -7,10 +7,10 @@ app.use(cors())
 app.use(express.json());
 const port = 5000
 let connection = mysql.createConnection({
-  host     : 'localhost',
-  database : 'mi-granja',
-  user     : 'root',
-  password : ''
+   host: 'db4free.net', 
+   user: 'root_juand', 
+   password:'12345678', 
+   database:'migranja' 
 });
 connection.connect();
 
