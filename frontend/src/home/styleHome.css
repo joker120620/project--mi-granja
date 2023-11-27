@@ -15,3 +15,14 @@ body, html {
     background: url(../bg-img.jpg) no-repeat center center fixed;
     background-size: auto 100%;
 }
+.div-nav-home{
+  display: flex;
+}
+.btn-nav-home{
+  color: white;
+  background-color: var(--btn-login-bg-color);
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+  border: none;
+  width: fit-content;
+}
