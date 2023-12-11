@@ -10,6 +10,25 @@
     --btn-login-border-color: #3f8880;
 }
 
+body::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+    /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--btn-login-bg-color);
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid var(--btn-login-bg-color);
+    /* creates padding around scroll thumb */
+}
+
 body,
 html {
     height: 100%;
@@ -17,31 +36,53 @@ html {
     background: url(../bg-img.jpg) no-repeat center center fixed;
     background-size: auto 100%;
 }
-.title-home{
+
+.title-home {
     font-size: 30px;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
-#nav-home{
-    background-color: white ;
+
+#nav-home {
+    background-color: white;
 }
-.nav-list-ul-home{
+
+.nav-list-ul-home {
     list-style-type: none;
     display: flex;
     align-items: center;
     padding: 5px;
-    margin:auto;
+    margin: auto;
     width: fit-content;
-    background-color: transparent ;
+    background-color: transparent;
 }
 
-.nav-btn-home{
+.nav-btn-home {
     color: var(--div-login-text-color);
     border: none;
-    background-color: transparent ;
+    background-color: transparent;
     padding-bottom: 5px;
 }
-.nav-btn-home:hover{
-    border-bottom:solid var(--div-login-text-color);
+
+.nav-btn-home:hover {
+    border-bottom: solid var(--div-login-text-color);
+}
+
+.div-text-content-home {
+    background-color: #f7f4e9;
+    border-radius: 10px;
+    width: fit-content;
+    margin: auto;
+    font-size: 15px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+.footer{
+    background-color: #f7f4e9;
+    border-radius: 10px;
+    width: fit-content;
+    font-size: 15px;
+    text-align:start;
+    text-justify: inter-word;
 }
